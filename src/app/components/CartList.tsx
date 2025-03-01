@@ -13,7 +13,7 @@ export default function CartList() {
     // Fetch cart data from Express backend
     const fetchCart = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/cart");
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cart`);
         const data = await response.json();
         setCart(data);
       } catch (error) {
